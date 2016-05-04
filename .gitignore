@@ -1,0 +1,4 @@
+*.png
+*.pyc
+*.breaks
+data/census.hdf

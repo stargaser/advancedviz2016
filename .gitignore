@@ -2,3 +2,7 @@
 *.pyc
 *.breaks
 data/census.hdf
+.ipynb_checkpoints/
+sdss_brushing.html
+sdss_color_color.html
+

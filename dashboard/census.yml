@@ -1,6 +1,6 @@
 ---
 
-file: ./data/census.hdf
+file: ../data/census.hdf
 
 initial_extent:
   is_geo: true

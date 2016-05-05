@@ -37,7 +37,7 @@ pip install ginga
 
 ```
 conda install datashader
-pip install
+pip install statsmodels
 pip install astroML
 conda install scikit-learn
 conda install pytables

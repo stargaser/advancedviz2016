@@ -10,7 +10,9 @@ Astropy tutorial).
 
 * Linking and brushing with bokeh and Glue
 * Least-squares fitting with statsmodels
+* A quick machine learning example
 * Displaying 300 million points from the US census with datashader
+* Why data apps in Python are hard
 
 
 ## Starting the notebooks

@@ -1,0 +1,22 @@
+snres_wls_2nd = snmod_wls_2nd.fit()
+
+snres_wls_2nd.summary()
+
+snmod_wls_4th = smf.wls("mu ~ z + np.power(z,2) + np.power(z,3) + np.power(z,4)", data=sndata, weights=dmu**-2)
+
+snres_wls_4th = snmod_wls_4th.fit()
+
+print(snres_wls_4th.summary())
+
+snres_wls_4th.predict({"z" :z_range})
+
+fig = plt.figure(figsize=(5, 5))
+plt.errorbar(z_sample, mu_sample, dmu, fmt='.k', ecolor='gray', lw=1)
+plt.plot(z_range, snres_wls_2nd.predict({"z":z_range}), 'r-', label="4th order")
+plt.plot(z_range, snres_wls_4th.predict({"z":z_range}), 'r-', label="4th order")
+plt.xlabel(r'$z$')
+plt.ylabel(r'$\mu$')
+
+print(snres_wls_4th.rsquared, snres_wls_2nd.rsquared)
+
+print(snres_wls_4th.aic, snres_wls_2nd.aic)

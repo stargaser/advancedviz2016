@@ -11,16 +11,12 @@ This creates a virtual environment named `course`. You can list your environment
 
 ### Activate the virtual environment
 
-In a bash-like shell:
+For further conda installs to work, you must use a bash shell.
+Then execute:
 ```
 source activate course
 ```
 
-In a csh-like shell, the `activate` is not available. Look at the output of `conda info -e` for the path to your `course`
-virtual environment. Then add it to your PATH environment variable. Or, use this UNIX one-liner:
-```
-setenv PATH `conda info -e | grep course | awk '{printf("%s/bin\n",$NF)}'`:$PATH
-```
 
 ### Install packages not available in conda
 
@@ -42,11 +38,16 @@ pip install astroML
 conda install scikit-learn
 conda install pytables
 pip install webargs
-pip install ipywidgets --upgrade
+pip install ipywidgets=5.0.0
+conda update notebook
 ```
 
 ## to make widgets work in the notebook
 
+You must have ipywidgets at version 5.0.0 and notebook at 4.2.0.
+Then execute:
 ```
 jupyter nbextension enable --py widgetsnbextension
 ```
+
+Widgets will work but will print a misleading error message.
